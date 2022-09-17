@@ -21,7 +21,7 @@ export class TickService {
     });
     return createdTick.save();
   }
-  async findAll(pair: Pair): Promise<Tick[]> {
-    return this.tickModel.find({ pair }).exec();
+  async findAll(pair: Pair, limit = 30): Promise<Tick[]> {
+    return this.tickModel.find({ pair }).sort('-createdAt').limit(limit).exec();
   }
 }

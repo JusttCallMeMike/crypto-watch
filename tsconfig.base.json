@@ -1,4 +1,5 @@
 {
+  "composite":true,
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",

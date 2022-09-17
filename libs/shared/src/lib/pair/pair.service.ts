@@ -1,4 +1,4 @@
-import { Model } from 'mongoose';
+import { Model, ObjectId } from 'mongoose';
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Pair } from './schemas/pair.schema';
@@ -23,6 +23,12 @@ export class PairService {
   }
   async findAll(): Promise<Pair[]> {
     return this.pairModel.find().exec();
+  }
+  async getOne(args: { _id?: ObjectId; name?: string }) {
+    this.logger.debug(args);
+    const result = await this.pairModel.findOne(args).exec();
+    this.logger.debug(result);
+    return result;
   }
   async getByName(name: string) {
     this.logger.log({ name });
