@@ -4,7 +4,7 @@ import {
   ParsePairPipe,
   Tick,
   TickService,
-} from '@crypto-watch/shared';
+} from '@crypto-watch/db';
 import { Logger, ParseIntPipe } from '@nestjs/common';
 import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { PubSub } from 'graphql-subscriptions';
@@ -38,7 +38,7 @@ export class TickResolver {
   }
   // FIXME : shouldnt work like this!
   @ResolveField('pair')
-  async pair(@Parent() tick: Tick) {
+  async pair(@Parent() tick: any) {
     this.logger.debug({ tick });
     return this.pairService.getOne({ _id: tick.pair });
   }

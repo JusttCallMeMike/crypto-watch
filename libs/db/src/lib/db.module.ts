@@ -11,9 +11,9 @@ import { TickService } from './pair/tick.service';
       { name: Pair.name, schema: PairSchema },
       { name: Tick.name, schema: TickSchema },
     ]),
-    MongooseModule.forRoot('mongodb://docker:mongopw@localhost:55000'),
+    MongooseModule.forRoot('mongodb://localhost:27017'),
   ],
   providers: [PairService, TickService],
   exports: [PairService, TickService],
 })
-export class SharedModule {}
+export class DbModule {}

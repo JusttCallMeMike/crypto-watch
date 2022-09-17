@@ -1,4 +1,4 @@
-import { PairService, SharedModule } from '@crypto-watch/shared';
+import { PairService, DbModule } from '@crypto-watch/db';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
@@ -15,7 +15,7 @@ import { TickModule } from './tick/tick.module';
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
-    SharedModule,
+    DbModule,
     TickModule,
     PairModule,
   ],

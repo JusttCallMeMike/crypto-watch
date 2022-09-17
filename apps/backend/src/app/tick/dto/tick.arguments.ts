@@ -1,4 +1,4 @@
-import { Pair, ParsePairPipe } from '@crypto-watch/shared';
+import { Pair, ParsePairPipe } from '@crypto-watch/db';
 import { ArgsType, Field, Int } from '@nestjs/graphql';
 
 @ArgsType()

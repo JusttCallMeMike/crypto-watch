@@ -1,4 +1,4 @@
-import { Pair, PairService } from '@crypto-watch/shared';
+import { Pair, PairService } from '@crypto-watch/db';
 import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 import axios from 'axios';
 

@@ -1,6 +1,6 @@
-import { SharedModule } from '@crypto-watch/shared';
+import {DbModule} from '@crypto-watch/db';
 import { Module } from '@nestjs/common';
 import { TickResolver } from './tick.resolver';
 
-@Module({ imports: [SharedModule], providers: [TickResolver] })
+@Module({ imports: [DbModule], providers: [TickResolver] })
 export class TickModule {}

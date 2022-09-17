@@ -1,5 +1,5 @@
 {
-  "composite":true,
+  "composite": true,
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@crypto-watch/shared": ["libs/shared/src/index.ts"]
+      "@crypto-watch/auth": ["libs/auth/src/index.ts"],
+      "@crypto-watch/db": ["libs/db/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

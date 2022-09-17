@@ -3,9 +3,8 @@ import {
   PairService,
   ParsePairPipe,
   TickService,
-} from '@crypto-watch/shared';
+} from '@crypto-watch/db'
 import {
-  BadRequestException,
   Body,
   Controller,
   Get,
@@ -13,7 +12,6 @@ import {
   Param,
   Post,
 } from '@nestjs/common';
-import axios from 'axios';
 import { AppService } from './app.service';
 
 @Controller()

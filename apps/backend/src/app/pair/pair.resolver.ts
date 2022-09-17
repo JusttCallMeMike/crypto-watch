@@ -4,7 +4,7 @@ import {
   ParsePairPipe,
   Tick,
   TickService,
-} from '@crypto-watch/shared';
+} from '@crypto-watch/db';
 import { Logger, NotFoundException, ParseIntPipe } from '@nestjs/common';
 import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { PubSub } from 'graphql-subscriptions';
