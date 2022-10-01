@@ -3,20 +3,21 @@
  * This is only a minimal backend to get started.
  */
 
-import { Logger } from '@nestjs/common';
-import { NestFactory } from '@nestjs/core';
+import config from '@config'
+import { Logger } from '@nestjs/common'
+import { NestFactory } from '@nestjs/core'
 
-import { AppModule } from './app/app.module';
+import { AppModule } from './app/app.module'
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  const globalPrefix = 'api';
-  app.setGlobalPrefix(globalPrefix);
-  const port = process.env.PORT || 3334;
-  await app.listen(port);
+  const app = await NestFactory.create(AppModule)
+  const globalPrefix = 'api'
+  app.setGlobalPrefix(globalPrefix)
+  const port = config.collectorPort
+  await app.listen(port)
   Logger.log(
-    `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
-  );
+    `🚀 Collector Application is running on: http://localhost:${port}/${globalPrefix}`
+  )
 }
 
-bootstrap();
+bootstrap()

@@ -5,7 +5,15 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "preinstall": "npx only-allow pnpm",
+    "serve:backend": "nx run backend:serve",
+    "serve:collector": "nx run collector:serve",
+    "serve:all": "nx run-many --target=serve "
+  },
+  "engines": {
+    "npm": ">=8.19.0 <9.0.0",
+    "node": ">=18.10.0 <19.0.0"
   },
   "private": true,
   "dependencies": {
@@ -21,12 +29,15 @@
     "@nestjs/schedule": "^2.1.0",
     "@nestjs/swagger": "^6.1.2",
     "apollo-server-express": "^3.10.2",
+    "axios": "^0.27.2",
     "class-validator": "^0.13.2",
     "core-js": "^3.6.5",
+    "dotenv": "^16.0.3",
     "graphql": "^16.6.0",
     "graphql-subscriptions": "^2.0.0",
     "jwks-rsa": "^2.1.4",
     "mongoose": "^6.5.5",
+    "only-allow": "^1.1.1",
     "passport": "^0.6.0",
     "passport-google-oauth": "^2.0.0",
     "passport-jwt": "^4.0.0",

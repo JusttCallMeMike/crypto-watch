@@ -30,4 +30,9 @@ input pairInput {
 type Query {
   ticks(pair: pairInput!, take: Int = 30): [Tick!]!
   pair(_id: ID, name: String): Pair!
+  pairs: [Pair!]!
+}
+
+type Mutation {
+  createPair(name: String!): Pair!
 }
